@@ -6,5 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Miguel Vieira Ramos",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  }
 }
