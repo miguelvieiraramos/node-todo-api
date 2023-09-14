@@ -1,5 +1,5 @@
 import express, { Express, Request, Response, json } from 'express';
-import getAppDataSource from './app-data-source';
+import appDataSource from './app-data-source';
 import { User } from './entities';
 import * as argon2 from "argon2";
 import * as dotenv from "dotenv";
@@ -9,9 +9,6 @@ import jwt from "jsonwebtoken";
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-const appDataSource = getAppDataSource(
-    process.env.NODE_ENV as string,
-);
 appDataSource
     .initialize()
     .then(() => {

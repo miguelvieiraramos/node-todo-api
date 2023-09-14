@@ -1,7 +1,6 @@
 import { DataSource } from "typeorm";
 import app from "../src/app";
 import request from "supertest";
-import getAppDataSource from "../src/app-data-source";
 import { User } from "../src/entities";
 import * as argon2 from "argon2";
 import jwt from "jsonwebtoken";
@@ -10,7 +9,11 @@ let appDataSource: DataSource;
 
 beforeEach(async () => {
     process.env.NODE_ENV = "test";
-    appDataSource = getAppDataSource(process.env.NODE_ENV as string);
+    appDataSource = new DataSource({
+        type: "sqlite",
+        database: "test_database.sql",
+        entities: [User],
+    });
     await appDataSource.initialize();
     await appDataSource.synchronize(true);
 });

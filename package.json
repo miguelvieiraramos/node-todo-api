@@ -6,7 +6,9 @@
     "start:dev": "nodemon",
     "test": "jest",
     "lint": "eslint src/ tests/",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "migration:run": "typeorm-ts-node-esm migration:run -d src/app-data-source.ts",
+    "migration:revert": "typeorm-ts-node-esm migration:revert -d src/app-data-source.ts"
   },
   "author": "Miguel Vieira Ramos",
   "license": "ISC",
