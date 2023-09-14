@@ -11,5 +11,9 @@
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "node16",
         "noImplicitAny": true,
-    }
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
+    },
+    "exclude": ["**/*.spec.ts"]
 }
